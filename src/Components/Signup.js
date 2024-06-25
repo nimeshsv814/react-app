@@ -11,6 +11,7 @@ const SignUp = () => {
   return (
     <section className="container">
       <span className="title">Registration form</span>
+
       <form
         action="#"
         className="form"
@@ -18,9 +19,9 @@ const SignUp = () => {
         name="myform"
         onSubmit={(e) => {
           e.preventDefault();
-          // Add form validation or submission logic here
         }}
       >
+        <br />
         <div className="input-box">
           <label>Full Name</label>
           <input
@@ -29,6 +30,7 @@ const SignUp = () => {
             id="name"
             placeholder="Enter full name"
             required
+            style={{ width: "500px" }}
           />
         </div>
         <div className="input-box">
@@ -39,9 +41,17 @@ const SignUp = () => {
             id="emailid"
             placeholder="Enter email address"
             required
+            style={{ width: "500px" }}
           />
         </div>
-        <div className="column">
+        <div
+          className="column"
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            gap: "10px",
+          }}
+        >
           <div className="input-box">
             <label>Phone Number</label>
             <input
@@ -49,6 +59,7 @@ const SignUp = () => {
               name="phno"
               placeholder="Enter phone number"
               required
+              style={{ width: "200px" }}
             />
           </div>
           <div className="input-box">
@@ -58,13 +69,16 @@ const SignUp = () => {
               name="dob"
               placeholder="Enter birth date"
               required
+              style={{ width: "200px" }}
             />
           </div>
         </div>
         <div className="gender-box">
-          <br />
           <h3>Gender</h3>
-          <div className="gender-option">
+          <div
+            className="gender-option"
+            style={{ display: "flex", gap: "5px" }}
+          >
             <div className="gender">
               <input
                 type="radio"
@@ -103,6 +117,7 @@ const SignUp = () => {
             placeholder="Enter street address"
             name="address"
             required
+            style={{ width: "500px", marginBottom: "20px" }}
           />
           <div className="column">
             <input
@@ -110,22 +125,27 @@ const SignUp = () => {
               name="city"
               placeholder="Enter City name"
               required
+              style={{ width: "200px" }}
             />
             <input
               type="text"
               name="state"
               placeholder="Enter State name"
               required
+              style={{ width: "200px" }}
             />
           </div>
         </div>
+
         <div className="input-field">
+          <label>Password</label>
           <input
             type={passwordVisible ? "text" : "password"}
             className="password"
             name="password"
             placeholder="Create a Password"
             required
+            style={{ width: "480px" }}
           />
           <i className="uil uil-lock icon"></i>
           <i
@@ -136,12 +156,14 @@ const SignUp = () => {
           ></i>
         </div>
         <div className="input-field">
+          <label>Confirm Password</label>
           <input
             type={passwordVisible ? "text" : "password"}
             className="password"
             name="password1"
             placeholder="Confirm your Password"
             required
+            style={{ width: "480px" }}
           />
           <i className="uil uil-lock icon"></i>
           <i
@@ -152,7 +174,7 @@ const SignUp = () => {
           ></i>
         </div>
         <br />
-        <button id="submit" type="submit">
+        <button id="submit" type="submit" style={{ width: "500px" }}>
           Submit
         </button>
       </form>

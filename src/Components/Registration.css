@@ -41,8 +41,8 @@
 
 .column {
   display: flex;
-  justify-content: space-between;
-  gap: 10px; /* Added gap for better spacing */
+  justify-content: space-evenly;
+  gap: 38px; /* Added gap for better spacing */
 }
 
 .column .input-box {
@@ -55,7 +55,7 @@
 
 .gender-option {
   display: flex;
-  justify-content: space-around; /* Changed justify-content for better alignment */
+  justify-content: space-evenly; /* Changed justify-content for better alignment */
 }
 
 .gender {
@@ -65,6 +65,7 @@
 
 .gender label {
   margin-left: 5px;
+
   color: #555; /* Changed color for better readability */
 }
 
@@ -107,4 +108,11 @@ button {
 
 button:hover {
   background-color: #218838; /* Changed hover color to a darker green shade */
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
 }
