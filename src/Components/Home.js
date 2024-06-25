@@ -1,9 +1,9 @@
-import React from 'react';
-
+import React from "react";
+import Gallery from "./Gallery";
 const Home = () => (
   <div>
     <h1>Home Page</h1>
-    <img src="https://source.unsplash.com/random/800x600" alt="Random" />
+    <Gallery />
   </div>
 );
 

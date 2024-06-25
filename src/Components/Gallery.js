@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Registration.css";
 
@@ -8,35 +8,26 @@ const SignUp = () => {
   const [phno, setPhno] = useState("");
   const [dob, setDOB] = useState("");
 
-  const handlePost = () => {
+  const handlePost = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
     axios
       .post("http://localhost:3002/Signup", { name, email, phno, dob })
-
       .then(() => {
-        alert("data saved successfully");
+        alert("Data saved successfully");
         setName("");
         setEmail("");
         setPhno("");
         setDOB("");
       })
       .catch((e) => {
-        console.log("error");
+        console.log("Error: ", e);
       });
   };
 
   return (
     <section className="container">
       <span className="title">Registration form</span>
-      <form
-        action="#"
-        className="form"
-        method="post"
-        name="myform"
-        onSubmit={(e) => {
-          handlePost();
-          // Add form validation or submission logic here
-        }}
-      >
+      <form className="form" onSubmit={handlePost}>
         <div className="input-box">
           <label>Full Name</label>
           <input
@@ -44,9 +35,7 @@ const SignUp = () => {
             name="name"
             id="name"
             value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Enter full name"
             required
           />
@@ -58,9 +47,7 @@ const SignUp = () => {
             name="email"
             id="emailid"
             value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter email address"
             required
           />
@@ -72,9 +59,7 @@ const SignUp = () => {
               type="tel"
               name="phno"
               value={phno}
-              onChange={(e) => {
-                setPhno(e.target.value);
-              }}
+              onChange={(e) => setPhno(e.target.value)}
               placeholder="Enter phone number"
               required
             />
@@ -85,16 +70,13 @@ const SignUp = () => {
               type="date"
               name="dob"
               value={dob}
-              onChange={(e) => {
-                setDOB(e.target.value);
-              }}
+              onChange={(e) => setDOB(e.target.value)}
               placeholder="Enter birth date"
               required
             />
           </div>
         </div>
         <div className="gender-box">
-          <br />
           <h3>Gender</h3>
           <div className="gender-option">
             <div className="gender">
@@ -153,6 +135,7 @@ const SignUp = () => {
         </div>
         <div className="input-field">
           <input
+            type="password"
             className="password"
             name="password"
             placeholder="Create a Password"
@@ -161,14 +144,14 @@ const SignUp = () => {
         </div>
         <div className="input-field">
           <input
+            type="password"
             className="password"
             name="password1"
             placeholder="Confirm your Password"
             required
           />
         </div>
-        <br />
-        <button id="submit" type="submit" onClick={handlePost}>
+        <button id="submit" type="submit">
           Submit
         </button>
       </form>
