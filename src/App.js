@@ -5,7 +5,7 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Navbar from "./Components/Navbar";
 import Todo from "./Components/Todo";
-
+import Login from "./Components/Login";
 import "./App.css";
 import SignUp from "./Components/Signup";
 
@@ -20,6 +20,7 @@ function App() {
           <Route path="/contact" Component={Contact} />
           <Route path="/todolist" Component={Todo} />
           <Route path="/signup" Component={SignUp} />
+          <Route path="/login" Component={Login} />
         </Routes>
       </div>
     </Router>
