@@ -68,29 +68,46 @@ const Todo = () => {
   }
   return (
     <div>
-      <div style={{ display: "flex", marginBottom: "10px", marginTop: "50px" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          marginBottom: "10px",
+          marginTop: "50px",
+        }}
+      >
         <TextField
           id="todo"
           label="Todo"
           variant="outlined"
           value={todo}
           onChange={(e) => setTodo(e.target.value)}
+          style={{ width: "510px" }}
         />
-
-        <Button
-          variant="outlined"
-          onClick={create}
-          style={{ marginLeft: "10px" }}
+        <div
+          style={{
+            display: "flex",
+            marginTop: "20px",
+            gap: "50px",
+            width: "520px",
+          }}
         >
-          Post
-        </Button>
-        <Button
-          variant="outlined"
-          onClick={getData}
-          style={{ marginLeft: "10px" }}
-        >
-          Get All
-        </Button>
+          <Button
+            variant="outlined"
+            onClick={create}
+            style={{ marginLeft: "10px", width: "220px" }}
+          >
+            Post
+          </Button>
+          <Button
+            variant="outlined"
+            onClick={getData}
+            style={{ marginLeft: "10px", width: "220px" }}
+          >
+            Get All
+          </Button>
+        </div>
       </div>
 
       <ol>

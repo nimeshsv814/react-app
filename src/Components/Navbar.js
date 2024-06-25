@@ -16,6 +16,9 @@ const Navbar = () => (
       <li>
         <Link to="/todolist">To do List</Link>
       </li>
+      <li>
+        <Link to="/signup">SignUp</Link>
+      </li>
     </ul>
   </nav>
 );

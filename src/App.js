@@ -7,7 +7,7 @@ import Navbar from "./Components/Navbar";
 import Todo from "./Components/Todo";
 
 import "./App.css";
-import Gallery from "./Components/Gallery";
+import SignUp from "./Components/Signup";
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           <Route path="/about" Component={About} />
           <Route path="/contact" Component={Contact} />
           <Route path="/todolist" Component={Todo} />
+          <Route path="/signup" Component={SignUp} />
         </Routes>
       </div>
     </Router>
